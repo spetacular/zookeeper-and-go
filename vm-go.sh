@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-
-apt-get update
-apt-get install -y build-essential git-core mercurial
 cd /opt
-hg clone -u release https://code.google.com/p/go
-cd go/src
-./all.bash
+wget https://dl.google.com/go/go1.9.3.linux-amd64.tar.gz
+tar -xzf go1.9.3.linux-amd64.tar.gz
+rm go1.9.3.linux-amd64.tar.gz
 
 cat > /home/vagrant/.profile <<EOF
 export GOPATH=\$HOME
